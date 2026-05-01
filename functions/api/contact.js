@@ -9,11 +9,6 @@ const json = (body, status = 200) =>
     }
   });
 
-const toWhatsAppUrl = (number, text) => {
-  const message = encodeURIComponent(text);
-  return `https://wa.me/${number}?text=${message}`;
-};
-
 export async function onRequestPost(context) {
   try {
     const contentType = context.request.headers.get("content-type") || "";
@@ -21,7 +16,6 @@ export async function onRequestPost(context) {
       ? await context.request.json()
       : Object.fromEntries((await context.request.formData()).entries());
 
-    const name = String(payload.name || "Visitor").trim();
     const phone = String(payload.phone || "").trim();
     const message = String(payload.message || "").trim();
 
@@ -29,9 +23,7 @@ export async function onRequestPost(context) {
       return json({ ok: false, error: "Phone and message are required." }, 400);
     }
 
-    const whatsappNumber = context.env.WHATSAPP_NUMBER || DEFAULT_WHATSAPP;
-    const whatsappText = `Hi, I am ${name}. Phone: ${phone}. I need support for: ${message}`;
-    const redirect = toWhatsAppUrl(whatsappNumber, whatsappText);
+    const redirect = `https://wa.me/${DEFAULT_WHATSAPP}`;
 
     const webhook = context.env.LEAD_WEBHOOK_URL;
     if (webhook) {
@@ -42,7 +34,6 @@ export async function onRequestPost(context) {
         },
         body: JSON.stringify({
           clinic: "Shalima's Mind Clinic",
-          name,
           phone,
           message,
           source: payload.source || "landing-page",

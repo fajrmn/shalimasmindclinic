@@ -1,6 +1,6 @@
 (() => {
   const config = {
-    whatsappNumber: "919400778065"
+    whatsappUrl: "https://wa.me/919400778065"
   };
 
   const year = document.getElementById("year");
@@ -8,11 +8,6 @@
 
   const leadForm = document.getElementById("leadForm");
   const formStatus = document.getElementById("formStatus");
-
-  const buildWhatsAppLink = (message) => {
-    const encoded = encodeURIComponent(message);
-    return `https://wa.me/${config.whatsappNumber}?text=${encoded}`;
-  };
 
   if (leadForm) {
     leadForm.addEventListener("submit", async (event) => {
@@ -26,8 +21,7 @@
 
       const formData = new FormData(leadForm);
       const payload = Object.fromEntries(formData.entries());
-      const intro = `Hi, I am ${payload.name}. Phone: ${payload.phone}. I need support for: ${payload.message}`;
-      const fallbackUrl = buildWhatsAppLink(intro);
+      const fallbackUrl = config.whatsappUrl;
 
       formStatus.textContent = "Sending request...";
 
@@ -44,7 +38,7 @@
 
         const result = await response.json();
         formStatus.textContent = "Thanks. Opening WhatsApp now...";
-        window.location.href = result.redirect || fallbackUrl;
+        window.location.href = fallbackUrl;
       } catch (_error) {
         formStatus.textContent = "Could not send online form. Opening WhatsApp directly...";
         window.location.href = fallbackUrl;

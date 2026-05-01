@@ -24,7 +24,6 @@ SEO-optimized, mobile-first landing page for `shalimasmindclinic.com` with Whats
 
 ## Optional Environment Variables (Cloudflare Pages)
 
-- `WHATSAPP_NUMBER`: Overrides fallback WhatsApp number.
 - `LEAD_WEBHOOK_URL`: If set, the form endpoint will POST lead JSON to this URL (for email/CRM automation).
 
 ## Deploy to Cloudflare Pages
@@ -36,7 +35,6 @@ SEO-optimized, mobile-first landing page for `shalimasmindclinic.com` with Whats
 - Build command: *(leave empty)*
 - Build output directory: `/`
 4. Add environment variables under Pages settings (if needed):
-- `WHATSAPP_NUMBER`
 - `LEAD_WEBHOOK_URL`
 5. Set custom domain:
 - `shalimasmindclinic.com`
@@ -47,4 +45,3 @@ SEO-optimized, mobile-first landing page for `shalimasmindclinic.com` with Whats
 - Minimal JS and CSS.
 - No heavy external libraries.
 - Hero image served as lightweight SVG placeholder (swap to optimized WebP clinic photos later for stronger trust).
-
