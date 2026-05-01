@@ -592,11 +592,14 @@ h3 {
   .services-photo {
     position: sticky;
     top: 5rem;
-    max-height: 520px;
   }
 
   .services-photo img {
-    max-height: 520px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1446 / 1160;
+    object-fit: cover;
+    object-position: center;
   }
 
   .service-grid {
