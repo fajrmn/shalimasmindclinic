@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Shalimas Mind Clinic Thazhepalam Office</title>
+  <desc id="desc">Illustrative welcome art for Shalima's Mind Clinic in Thazhepalam, Tirur.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f1e3"/>
+      <stop offset="100%" stop-color="#d6e8f2"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#eef5f9" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="170" fill="#ffcf99" opacity="0.45"/>
+  <circle cx="190" cy="700" r="220" fill="#9dc5bb" opacity="0.35"/>
+  <rect x="140" y="140" width="920" height="520" rx="24" fill="url(#card)"/>
+  <rect x="190" y="210" width="330" height="28" rx="14" fill="#2d5f73" opacity="0.85"/>
+  <rect x="190" y="255" width="510" height="18" rx="9" fill="#62879b" opacity="0.8"/>
+  <rect x="190" y="285" width="460" height="18" rx="9" fill="#62879b" opacity="0.65"/>
+  <rect x="190" y="360" width="220" height="54" rx="12" fill="#1d8f6a"/>
+  <text x="300" y="396" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#ffffff">Book via WhatsApp</text>
+  <rect x="760" y="220" width="230" height="320" rx="20" fill="#d1e4ee"/>
+  <circle cx="875" cy="300" r="62" fill="#f6f6f6"/>
+  <rect x="815" y="380" width="120" height="120" rx="20" fill="#fefefe"/>
+  <text x="600" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#2a4e5f">Shalima's Mind Clinic</text>
+</svg>
