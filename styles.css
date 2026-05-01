@@ -73,10 +73,23 @@ img {
 
 .brand {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.45rem;
+  font-size: 1.28rem;
   font-weight: 600;
   color: var(--navy);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d5d0c5;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(26, 22, 52, 0.14);
 }
 
 .nav {
@@ -124,7 +137,7 @@ img {
 
 .hero-wrap {
   background: linear-gradient(115deg, rgba(31, 28, 55, 0.97), rgba(31, 28, 55, 0.6)),
-    url("https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1600&q=80") center/cover;
+    url("/assets/real/clinic-office-2.png") center/cover;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   overflow: hidden;
   display: grid;
@@ -208,6 +221,21 @@ h3 {
 .hero-media {
   border-radius: var(--radius-md);
   overflow: hidden;
+  position: relative;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(190deg, rgba(17, 14, 31, 0.08), rgba(17, 14, 31, 0.55));
+  pointer-events: none;
+}
+
+.hero-media img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .logo-strip {
@@ -226,6 +254,15 @@ h3 {
   color: #39465a;
   font-size: 0.82rem;
   font-weight: 700;
+}
+
+.clinic-logo {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #d8eadf;
+  background: #fff;
 }
 
 .section {
@@ -249,6 +286,15 @@ h3 {
 .intro-card img {
   aspect-ratio: 4/5;
   object-fit: cover;
+  object-position: center;
+}
+
+.intro-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 14, 31, 0) 48%, rgba(17, 14, 31, 0.55) 100%);
+  pointer-events: none;
 }
 
 .intro-number {
@@ -306,7 +352,6 @@ h3 {
 .benefit-card,
 .service-card,
 .testimonial-box,
-.lead-form,
 .map-wrap,
 .faq-list details {
   background: var(--paper);
@@ -326,6 +371,11 @@ h3 {
 .service-card img {
   aspect-ratio: 16/10;
   object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.04);
 }
 
 .service-card div {
@@ -367,6 +417,15 @@ h3 {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
+  position: relative;
+}
+
+.why-grid figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(175deg, rgba(17, 14, 31, 0.02), rgba(17, 14, 31, 0.42));
+  pointer-events: none;
 }
 
 .testimonial-box {
@@ -376,41 +435,6 @@ h3 {
 
 .contact {
   background: linear-gradient(180deg, transparent, #f4f1ea);
-}
-
-.note {
-  background: #fff3df;
-  border: 1px solid #f2d8aa;
-  border-radius: 10px;
-  padding: 0.64rem 0.8rem;
-  font-size: 0.86rem;
-}
-
-.lead-form {
-  margin-top: 1rem;
-  padding: 1rem;
-}
-
-.lead-form label {
-  display: block;
-  margin: 0.55rem 0 0.35rem;
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-
-.lead-form input,
-.lead-form textarea {
-  width: 100%;
-  border: 1px solid #dad3c7;
-  background: #fffefb;
-  border-radius: 10px;
-  padding: 0.72rem 0.78rem;
-  font: inherit;
-}
-
-.form-status {
-  min-height: 1.2em;
-  font-size: 0.9rem;
 }
 
 .map-wrap {
